@@ -7,12 +7,14 @@ import Icon from './app/components/Icon';
 import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker';
 import NameScreen from './app/screens/Register/NameScreen';
+import DobScreen from './app/screens/Register/DobScreen';
 
 export default function App () {
   return (
     <Screen>
-      <MobileScreen />
+      {/* <MobileScreen /> */}
       {/* <NameScreen /> */}
+      <DobScreen />
     </Screen>
   );
 }
