@@ -8,7 +8,7 @@ import AppTextInput from '../../components/AppTextInput';
 
 function MobileScreen (props) {
     return (
-        <Screen style={styles.background}>
+        <Screen>
             <View style={styles.body}>
                 <Text style={styles.text}>Verify your mobile number to get started</Text>
                 <AppTextInput placeholder='Phone number' keyboardType='phone-pad' />
@@ -27,9 +27,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     body: {
-        // backgroundColor: 'white',
-        top: 10,
-        padding: 10,
         width: '100%'
     },
     buttonContainer: {

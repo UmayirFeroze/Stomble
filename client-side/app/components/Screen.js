@@ -1,21 +1,31 @@
 import React from 'react';
 import Constants from 'expo-constants';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
 import colors from '../config/colors';
+import AppHeader from './AppHeader';
 
 function Screen ({ children }) {
     return (
-        <SafeAreaView style={styles.screen}>{children}</SafeAreaView>
+        <SafeAreaView style={styles.container}>
+            <AppHeader />
+            <View style={styles.content}>
+                {children}
+            </View>
+        </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
-    screen: {
-        // alignItems: 'center',
+    container: {
+        alignItems: 'center',
         backgroundColor: colors.primary,
         flex: 1,
         justifyContent: 'flex-end',
-        paddingTop: Constants.statusBarHeight,
+    },
+    content: {
+        width: '100%',
+        flex: 1,
+        padding: 10
     }
 });
 
