@@ -3,10 +3,11 @@ import { Button, Image, ImageBackground, SafeAreaView, StyleSheet, Text, View } 
 import colors from '../config/colors';
 import AppButton from '../components/AppButton';
 import App from '../../App';
+import Screen from '../components/Screen';
 
 function WelcomeScreen (props) {
     return (
-        <SafeAreaView style={styles.background}>
+        <Screen>
             <View style={styles.loginIcon}>
                 <AppButton title="Login" color={colors.tertiary} onPress={() => { console.log("Login Pressed!"); }} />
             </View>
@@ -17,7 +18,7 @@ function WelcomeScreen (props) {
                 <AppButton title="login" onPress={() => console.log("Login Screen!")} />
                 <Text style={styles.baseText}>Don't have an account? <Text style={styles.innerText} onPress={() => console.log("Register Screen!")}>Register Now!</Text></Text>
             </View>
-        </SafeAreaView>
+        </Screen>
     );
 }
 
@@ -45,7 +46,6 @@ const styles = StyleSheet.create({
     loginIcon: { backgroundColor: colors.tertiary, position: 'absolute', top: 40, right: 30 },
     logo: { width: 300, height: 150 },
     logoContainer: { position: 'absolute', top: '30 %' },
-    registerButton: { width: '100%', height: 70, backgroundColor: 'red' },
 });
 
 export default WelcomeScreen;;;
