@@ -8,13 +8,15 @@ import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker';
 import NameScreen from './app/screens/Register/NameScreen';
 import DobScreen from './app/screens/Register/DobScreen';
+import GenderScreen from './app/screens/Register/GenderScreen';
 
 export default function App () {
   return (
     <Screen>
       {/* <MobileScreen /> */}
       {/* <NameScreen /> */}
-      <DobScreen />
+      {/* <DobScreen /> */}
+      <GenderScreen />
     </Screen>
   );
 }
