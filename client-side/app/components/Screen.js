@@ -11,7 +11,7 @@ function Screen ({ children }) {
 
 const styles = StyleSheet.create({
     screen: {
-        alignItems: 'center',
+        // alignItems: 'center',
         backgroundColor: colors.primary,
         flex: 1,
         justifyContent: 'flex-end',

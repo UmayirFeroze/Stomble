@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
-import { TextInput, View, StyleSheet } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import colors from '../config/colors';
 
-function AppTextInput ({ icon, placeholder, ...otherProps }) {
-
+function AppPicker ({ placeholder, ...otherProps }) {
     return (
         <View style={styles.container}>
             {/* {icon && <MaterialCommunityIcons icon={icon} />} */}
-            <TextInput placeholder={placeholder} style={styles.input} {...otherProps} placeholderTextColor={colors.white} />
+            <Text style={styles.input} {...otherProps}>{placeholder}</Text>
         </View>
     );
 }
@@ -26,7 +24,8 @@ const styles = StyleSheet.create({
     },
     input: {
         fontSize: 18,
+        color: colors.white
     }
 });
 
-export default AppTextInput;
+export default AppPicker;

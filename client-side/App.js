@@ -4,11 +4,13 @@ import WelcomeScreen from './app/screens/WelcomeScreen';
 import MobileScreen from './app/screens/Register/MobileScreen';
 import Screen from './app/components/Screen';
 import Icon from './app/components/Icon';
+import AppTextInput from './app/components/AppTextInput';
+import AppPicker from './app/components/AppPicker';
 
 export default function App () {
   return (
     <Screen>
-
+      <MobileScreen />
     </Screen>
   );
 }
