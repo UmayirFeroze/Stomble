@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
         color: colors.white,
         marginTop: 10,
     },
+    buttonContainer: {
         padding: 20,
         width: '100%',
         paddingHorizontal: 'auto',
