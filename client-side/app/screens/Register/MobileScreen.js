@@ -9,13 +9,14 @@ import AppTextInput from '../../components/AppTextInput';
 function MobileScreen (props) {
     return (
         <Screen>
+            <Text style={styles.text}>Verify your mobile number to get started</Text>
             <View style={styles.body}>
-                <Text style={styles.text}>Verify your mobile number to get started</Text>
+                <Text style={styles.inputText}>Mobile Number</Text>
                 <AppTextInput placeholder='Phone number' keyboardType='phone-pad' />
             </View>
             <View style={styles.buttonContainer}>
                 <AppButton title="continue" onPress={() => console.log("Continue Screen!")} />
-                <Text style={styles.baseText}>Already have an account? <Text style={styles.innerText} onPress={() => console.log("Login Screen!")}>Register Now!</Text></Text>
+                <Text style={styles.baseText}>Already have an account? <Text style={styles.innerText} onPress={() => console.log("Login Screen!")}>Login Now!</Text></Text>
             </View>
         </Screen>
     );
@@ -30,13 +31,17 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     buttonContainer: {
-        padding: 20,
         width: '100%',
-        paddingHorizontal: 'auto',
+        flex: 1,
+        justifyContent: 'flex-end',
         alignItems: 'center'
     },
     innerText: {
         fontWeight: 'bold'
+    },
+    inputText: {
+        color: colors.white,
+        marginTop: 20,
     },
     text: {
         color: colors.white,
