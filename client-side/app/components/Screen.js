@@ -1,13 +1,13 @@
 import React from 'react';
 import Constants from 'expo-constants';
-import { SafeAreaView, StyleSheet, View } from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet, View } from 'react-native';
 import colors from '../config/colors';
 import AppHeader from './AppHeader';
 
 function Screen ({ children }) {
     return (
         <SafeAreaView style={styles.container}>
-            <AppHeader />
+            <StatusBar barStyle='dark-content' backgroundColor={colors.white} translucent={false} />
             <View style={styles.content}>
                 {children}
             </View>
