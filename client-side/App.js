@@ -12,6 +12,7 @@ import GenderScreen from './app/screens/Register/GenderScreen';
 import PasswordScreen from './app/screens/Register/PasswordScreen';
 import OTPScreen from './app/screens/Register/OTPScreen';
 import SaveInfoScreen from './app/screens/Register/SaveInfoScreen';
+import AccountTypeScreen from './app/screens/Register/AccountTypeScreen';
 
 export default function App () {
   return (
@@ -22,7 +23,8 @@ export default function App () {
       {/* <GenderScreen /> */}
       {/* <PasswordScreen /> */}
       {/* <OTPScreen /> */}
-      <SaveInfoScreen />
+      {/* <SaveInfoScreen /> */}
+      <AccountTypeScreen />
     </Screen>
   );
 }
