@@ -28,7 +28,7 @@ function OTPScreen (props) {
             <View style={styles.buttonContainer}>
                 <AppButton title='verify' color='tertiary' onPress={() => console.log('Continue pressed!')} />
             </View>
-        </Screen >
+        </Screen>
     );
 }
 
