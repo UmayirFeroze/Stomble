@@ -6,6 +6,7 @@ import { View } from 'react-native';
 import AppTextInput from '../../components/AppTextInput';
 import AppButton from '../../components/AppButton';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import AppText from '../../components/AppText';
 
 function PasswordScreen (props) {
     const [show, setShow] = useState(false);
@@ -28,12 +29,12 @@ function PasswordScreen (props) {
             </View>
 
             <View>
-                <Text style={styles.criteria}>Password must contain</Text>
-                <Text style={styles.criteria}>Atleast 8 characters</Text>
-                <Text style={styles.criteria}>An Uppercase</Text>
-                <Text style={styles.criteria}>A Lowercase</Text>
-                <Text style={styles.criteria}>A number</Text>
-                <Text style={styles.criteria}>A special character</Text>
+                <AppText text='Password must contain' />
+                <AppText icon='checkbox-blank-circle' text='Atleast 8 characters' />
+                <AppText icon='checkbox-blank-circle' text='An uppercase' />
+                <AppText icon='checkbox-blank-circle' text='A lowercase' />
+                <AppText icon='checkbox-blank-circle' text='A number' />
+                <AppText icon='checkbox-blank-circle' text='A special character' />
             </View>
 
             <View>
