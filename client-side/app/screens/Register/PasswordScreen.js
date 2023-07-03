@@ -1,29 +1,44 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text } from 'react-native';
 import Screen from '../../components/Screen';
+import colors from '../../config/colors';
+import { View } from 'react-native';
+import AppTextInput from '../../components/AppTextInput';
+import AppButton from '../../components/AppButton';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 function PasswordScreen (props) {
+    const [show, setShow] = useState(false);
+    const [icon, setIcon] = useState('eye-off');
+    const [secure, setSecure] = useState(true);
+
+    const onChange = () => {
+        setShow(!show);
+        setSecure(!secure);
+        show ? setIcon('eye-off') : setIcon('eye');
+    };
+
     return (
         <Screen>
             <Text style={styles.baseText}>Setup password for high security</Text>
 
             <View>
                 <Text style={styles.inputText}>New Password</Text>
-                <AppTextInput placeholder='Enter your password' autoComplete={false} />
+                <AppTextInput placeholder='Enter your password' autoComplete='password' secureTextEntry={secure} icon={icon} size={25} onIcon={() => onChange()} />
             </View>
 
-            <View style={styles.validation}>
-                <Text>Password must contain</Text>
-                <Text>Atleast 8 characters</Text>
-                <Text>An Uppercase</Text>
-                <Text>A Lowercase</Text>
-                <Text>A number</Text>
-                <Text>A special character</Text>
+            <View>
+                <Text style={styles.criteria}>Password must contain</Text>
+                <Text style={styles.criteria}>Atleast 8 characters</Text>
+                <Text style={styles.criteria}>An Uppercase</Text>
+                <Text style={styles.criteria}>A Lowercase</Text>
+                <Text style={styles.criteria}>A number</Text>
+                <Text style={styles.criteria}>A special character</Text>
             </View>
 
             <View>
                 <Text style={styles.inputText}>Confirm New Password</Text>
-                <AppTextInput placeholder='Re-enter your password' autoComplete={false} secureTextEntry={true} textContentType='password' />
+                <AppTextInput placeholder='Re-enter your password' autoComplete='password' secureTextEntry={secure} textContentType='password' icon={icon} size={25} />
             </View>
 
             <View style={styles.buttonContainer}>
@@ -34,6 +49,9 @@ function PasswordScreen (props) {
 }
 
 const styles = StyleSheet.create({
+    criteria: {
+        color: colors.white
+    },
     baseText: {
         color: colors.white,
         fontSize: 20,
@@ -48,9 +66,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
     },
-    validation: {
-
-    }
 });
 
 export default PasswordScreen;

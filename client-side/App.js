@@ -9,6 +9,7 @@ import AppPicker from './app/components/AppPicker';
 import NameScreen from './app/screens/Register/NameScreen';
 import DobScreen from './app/screens/Register/DobScreen';
 import GenderScreen from './app/screens/Register/GenderScreen';
+import PasswordScreen from './app/screens/Register/PasswordScreen';
 
 export default function App () {
   return (
@@ -16,7 +17,8 @@ export default function App () {
       {/* <MobileScreen /> */}
       {/* <NameScreen /> */}
       {/* <DobScreen /> */}
-      <GenderScreen />
+      {/* <GenderScreen /> */}
+      <PasswordScreen />
     </Screen>
   );
 }

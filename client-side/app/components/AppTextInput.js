@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { TextInput, View, StyleSheet } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import colors from '../config/colors';
 
-function AppTextInput ({ icon, placeholder, ...otherProps }) {
+function AppTextInput ({ icon, size = 20, onIcon, placeholder, ...otherProps }) {
 
     return (
         <View style={styles.container}>
-            {/* {icon && <MaterialCommunityIcons icon={icon} />} */}
             <TextInput placeholder={placeholder} style={styles.input} {...otherProps} placeholderTextColor={colors.white} />
+            {icon && <MaterialCommunityIcons name={icon} size={size} color={colors.white} style={styles.icon} onPress={onIcon} />}
         </View>
     );
 }
@@ -24,8 +24,14 @@ const styles = StyleSheet.create({
         padding: 15,
         marginVertical: 10,
     },
+    icon: {
+        marginLeft: 10,
+        marginRight: 'auto',
+    },
     input: {
         fontSize: 18,
+        flex: 1,
+        color: colors.white
     }
 });
 
