@@ -12,7 +12,7 @@ const memberships = [
     { id: 2, title: 'Personal', subtitle: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout' },
 ];
 
-function AccountTypeScreen (props) {
+function AccountTypeScreen ({ navigation }) {
     const [selection, setSelection] = useState();
 
     const onChange = (id) => {
@@ -30,7 +30,7 @@ function AccountTypeScreen (props) {
             </View>
 
             <View style={styles.buttonContainer}>
-                <AppButton title='sign up' onPress={() => console.log('Continue pressed!')} />
+                <AppButton title='sign up' onPress={() => navigation.navigate('SaveInfoScreen')} />
             </View>
         </Screen>
     );

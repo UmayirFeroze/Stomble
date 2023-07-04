@@ -5,7 +5,7 @@ import AppButton from '../../components/AppButton';
 import colors from '../../config/colors';
 import AppText from '../../components/AppText';
 
-function OTPScreen (props) {
+function OTPScreen ({ navigation }) {
     return (
         <Screen>
             <View style={styles.container}>
@@ -26,7 +26,7 @@ function OTPScreen (props) {
             </View>
 
             <View style={styles.buttonContainer}>
-                <AppButton title='verify' color='tertiary' onPress={() => console.log('Continue pressed!')} />
+                <AppButton title='verify' color='tertiary' onPress={() => navigation.navigate('AccountTypeScreen')} />
             </View>
         </Screen>
     );
