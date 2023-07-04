@@ -8,7 +8,7 @@ import colors from '../../config/colors';
 
 const genders = [{ value: 1, label: 'Male' }, { value: 2, label: 'Female' }, { value: 3, label: 'Other' }, { value: 4, label: 'Prefer not to say' }];
 
-function GenderScreen (props) {
+function GenderScreen ({ navigation }) {
     const [gender, setGender] = useState();
 
     return (
@@ -20,7 +20,7 @@ function GenderScreen (props) {
             </View>
 
             <View style={styles.buttonContainer}>
-                <AppButton title='next' onPress={() => console.log('Next pressed!')} />
+                <AppButton title='next' onPress={() => navigation.navigate('PasswordScreen')} />
             </View>
         </Screen>
     );

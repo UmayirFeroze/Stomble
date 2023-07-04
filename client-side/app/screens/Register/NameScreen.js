@@ -5,7 +5,7 @@ import AppTextInput from '../../components/AppTextInput';
 import colors from '../../config/colors';
 import AppButton from '../../components/AppButton';
 
-function NameScreen (props) {
+function NameScreen ({ navigation }) {
     return (
         <Screen>
             <Text style={styles.baseText}>Create your Stomble Account</Text>
@@ -15,7 +15,7 @@ function NameScreen (props) {
             </View>
 
             <View style={styles.buttonContainer}>
-                <AppButton title='continue' onPress={() => console.log('Continue pressed!')} />
+                <AppButton title='continue' onPress={() => navigation.navigate('DobScreen')} />
             </View>
         </Screen>
     );

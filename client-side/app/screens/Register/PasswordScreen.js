@@ -8,7 +8,7 @@ import AppButton from '../../components/AppButton';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import AppText from '../../components/AppText';
 
-function PasswordScreen (props) {
+function PasswordScreen ({ navigation }) {
     const [show, setShow] = useState(false);
     const [icon, setIcon] = useState('eye-off');
     const [secure, setSecure] = useState(true);
@@ -43,7 +43,7 @@ function PasswordScreen (props) {
             </View>
 
             <View style={styles.buttonContainer}>
-                <AppButton title='continue' onPress={() => console.log('Continue pressed!')} />
+                <AppButton title='continue' onPress={() => navigation.navigate('OTPScreen')} />
             </View>
         </Screen>
     );

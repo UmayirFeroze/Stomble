@@ -6,7 +6,7 @@ import Screen from '../../components/Screen';
 import AppTextInput from '../../components/AppTextInput';
 
 
-function MobileScreen (props) {
+function MobileScreen ({ navigation }) {
     return (
         <Screen>
             <Text style={styles.text}>Verify your mobile number to get started</Text>
@@ -15,8 +15,8 @@ function MobileScreen (props) {
                 <AppTextInput placeholder='Phone number' keyboardType='phone-pad' />
             </View>
             <View style={styles.buttonContainer}>
-                <AppButton title="continue" onPress={() => console.log("Continue Screen!")} />
-                <Text style={styles.baseText}>Already have an account? <Text style={styles.innerText} onPress={() => console.log("Login Screen!")}>Login Now!</Text></Text>
+                <AppButton title="continue" onPress={() => navigation.navigate('NameScreen')} />
+                <Text style={styles.baseText}>Already have an account? <Text style={styles.innerText} onPress={() => navigation.navigate('WelcomeScreen')}>Login Now!</Text></Text>
             </View>
         </Screen>
     );

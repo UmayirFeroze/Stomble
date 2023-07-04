@@ -6,7 +6,7 @@ import AppTextInput from '../../components/AppTextInput';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import colors from '../../config/colors';
 
-function DobScreen (props) {
+function DobScreen ({ navigation }) {
     const [date, setDate] = useState(new Date());
     const [mode, setMode] = useState('date');
     const [show, setShow] = useState(false);
@@ -38,7 +38,7 @@ function DobScreen (props) {
             </View>
 
             <View style={styles.buttonContainer}>
-                <AppButton title='continue' onPress={() => console.log('Continue pressed!')} />
+                <AppButton title='continue' onPress={() => navigation.navigate('GenderScreen')} />
             </View>
         </Screen>
     );
