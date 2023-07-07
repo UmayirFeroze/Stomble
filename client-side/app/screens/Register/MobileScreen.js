@@ -10,8 +10,8 @@ import { registerUser } from '../../routes/register';
 function MobileScreen ({ navigation }) {
     const [phone, setPhone] = useState();
 
-    const onSubmit = (phone) => {
-        navigation.navigate('NameScreen', { phone: phone });
+    const onSubmit = () => {
+        navigation.navigate('NameScreen', { phone });
     };
 
     return (
@@ -22,7 +22,7 @@ function MobileScreen ({ navigation }) {
                 <AppTextInput placeholder='Phone number' keyboardType='phone-pad' textContentType='telephoneNumber' onChangeText={text => setPhone(text)} />
             </View>
             <View style={styles.buttonContainer}>
-                <AppButton title="continue" onPress={(phone) => onSubmit(phone)} />
+                <AppButton title="continue" onPress={onSubmit} />
                 <Text style={styles.baseText}>Already have an account? <Text style={styles.innerText} onPress={() => navigation.navigate('WelcomeScreen')}>Login Now!</Text></Text>
             </View>
         </Screen>

@@ -5,11 +5,14 @@ import AppButton from '../../components/AppButton';
 import AppTextInput from '../../components/AppTextInput';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import colors from '../../config/colors';
+import { useRoute } from '@react-navigation/native';
 
 function DobScreen ({ navigation }) {
     const [date, setDate] = useState(new Date());
     const [mode, setMode] = useState('date');
     const [show, setShow] = useState(false);
+
+    const { name, phone } = useRoute().params;
 
     const onChange = (event, selectedDate) => {
         const currentDate = selectedDate;
@@ -17,11 +20,13 @@ function DobScreen ({ navigation }) {
         setDate(currentDate);
     };
 
-    // const showMode = (currentMode) => { setShow(true); setMode(currentMode); };
-
     const showDatepicker = () => {
-        // showMode('date');
         setShow(!show);
+    };
+
+    const onSubmit = () => {
+        const user = { name, phone, dob: date };
+        navigation.navigate('GenderScreen', { name, phone, dob: date.toDateString() });
     };
 
     return (
@@ -38,7 +43,7 @@ function DobScreen ({ navigation }) {
             </View>
 
             <View style={styles.buttonContainer}>
-                <AppButton title='continue' onPress={() => navigation.navigate('GenderScreen')} />
+                <AppButton title='continue' onPress={onSubmit} />
             </View>
         </Screen>
     );

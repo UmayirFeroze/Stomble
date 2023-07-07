@@ -6,6 +6,7 @@ import AppButton from '../../components/AppButton';
 import AppCard from '../../components/AppCard';
 
 import colors from '../../config/colors';
+import { useRoute } from '@react-navigation/native';
 
 const memberships = [
     { id: 1, title: 'Business', subtitle: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout' },
@@ -19,6 +20,12 @@ function AccountTypeScreen ({ navigation }) {
         setSelection(id);
     };
 
+    const { name, phone, gender, dob, password, confirmPassword, otp } = useRoute().params;
+    const onSubmit = () => {
+        console.log(name, phone, dob, gender, password, confirmPassword, otp, selection);
+        navigation.navigate('SaveInfoScreen', { name, phone, dob, gender, password, confirmPassword, otp, accountType: selection });
+    };
+
     return (
         <Screen>
             <View>
@@ -30,7 +37,7 @@ function AccountTypeScreen ({ navigation }) {
             </View>
 
             <View style={styles.buttonContainer}>
-                <AppButton title='sign up' onPress={() => navigation.navigate('SaveInfoScreen')} />
+                <AppButton title='sign up' onPress={onSubmit} />
             </View>
         </Screen>
     );

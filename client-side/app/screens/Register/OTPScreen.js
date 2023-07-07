@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import Screen from '../../components/Screen';
 import AppButton from '../../components/AppButton';
 import colors from '../../config/colors';
 import AppText from '../../components/AppText';
+import { useRoute } from '@react-navigation/native';
 
 function OTPScreen ({ navigation }) {
+    const [otp, setOTP] = useState();
+
+    const { name, phone, dob, gender, password, confirmPassword } = useRoute().params;
+    const onSubmit = () => {
+        navigation.navigate('AccountTypeScreen', { name, phone, dob, gender, password, confirmPassword, otp });
+    };
+
     return (
         <Screen>
             <View style={styles.container}>
-                <TextInput keyboardType='numeric' maxLength={1} placeholderTextColor={colors.white} style={styles.input} textContentType='oneTimeCode'></TextInput>
-                <TextInput keyboardType='numeric' maxLength={1} placeholderTextColor={colors.white} style={styles.input} textContentType='oneTimeCode'></TextInput>
-                <TextInput keyboardType='numeric' maxLength={1} placeholderTextColor={colors.white} style={styles.input} textContentType='oneTimeCode'></TextInput>
-                <TextInput keyboardType='numeric' maxLength={1} placeholderTextColor={colors.white} style={styles.input} textContentType='oneTimeCode'></TextInput>
-                <TextInput keyboardType='numeric' maxLength={1} placeholderTextColor={colors.white} style={styles.input} textContentType='oneTimeCode'></TextInput>
-                <TextInput keyboardType='numeric' maxLength={1} placeholderTextColor={colors.white} style={styles.input} textContentType='oneTimeCode'></TextInput>
+                <TextInput keyboardType='numeric' maxLength={1} placeholderTextColor={colors.white} style={styles.input} textContentType='oneTimeCode' onChangeText={text => setOTP(text)}></TextInput>
+                <TextInput keyboardType='numeric' maxLength={1} placeholderTextColor={colors.white} style={styles.input} textContentType='oneTimeCode' onChangeText={text => setOTP(text)}></TextInput>
+                <TextInput keyboardType='numeric' maxLength={1} placeholderTextColor={colors.white} style={styles.input} textContentType='oneTimeCode' onChangeText={text => setOTP(text)}></TextInput>
+                <TextInput keyboardType='numeric' maxLength={1} placeholderTextColor={colors.white} style={styles.input} textContentType='oneTimeCode' onChangeText={text => setOTP(text)}></TextInput>
+                <TextInput keyboardType='numeric' maxLength={1} placeholderTextColor={colors.white} style={styles.input} textContentType='oneTimeCode' onChangeText={text => setOTP(text)}></TextInput>
+                <TextInput keyboardType='numeric' maxLength={1} placeholderTextColor={colors.white} style={styles.input} textContentType='oneTimeCode' onChangeText={text => setOTP(text)}></TextInput>
             </View>
 
             <View style={styles.content}>
@@ -26,7 +34,7 @@ function OTPScreen ({ navigation }) {
             </View>
 
             <View style={styles.buttonContainer}>
-                <AppButton title='verify' color='tertiary' onPress={() => navigation.navigate('AccountTypeScreen')} />
+                <AppButton title='verify' color='tertiary' onPress={onSubmit} />
             </View>
         </Screen>
     );
