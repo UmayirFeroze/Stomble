@@ -12,7 +12,7 @@ function MobileScreen ({ navigation }) {
             <Text style={styles.text}>Verify your mobile number to get started</Text>
             <View style={styles.body}>
                 <Text style={styles.inputText}>Mobile Number</Text>
-                <AppTextInput placeholder='Phone number' keyboardType='phone-pad' />
+                <AppTextInput placeholder='Phone number' keyboardType='phone-pad' textContentType='telephoneNumber' />
             </View>
             <View style={styles.buttonContainer}>
                 <AppButton title="continue" onPress={() => navigation.navigate('NameScreen')} />
