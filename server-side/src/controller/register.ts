@@ -14,10 +14,10 @@ const RegisterUser = (req:Request, res:Response, next:NextFunction) =>{
     .then(connection=>{
         Query(connection, query)
         .then(results => {  return res.status(200).json({results}); })
-        .catch(error => { res.status(500).send({ message:error.message, error }) })
+        .catch(error => { return res.status(500).send({ message:error.message, error }) })
         .finally( () => connection.end() )
     })
-    .catch(error => { res.status(500).send({ message:error.message, error }) })
+    .catch(error => { return res.status(500).send({ message:error.message, error }) })
 }
 
 function Validate(user:any) {
