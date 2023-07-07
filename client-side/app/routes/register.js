@@ -1,14 +1,16 @@
-import client from './client';
+import { postData } from './client';
 
-const endpoint = '/register';
+// const endpoint = '/register';
 
-export const registerUser = (user) => {
-    const data = new FormData();
-    data.append('name', user.name);
-    data.append('phone', user.phone);
-    data.append('gender', user.gender);
-    data.append('password', user.password);
-    data.append('password', user.confirmPassword);
+export const registerUser = async ({ name, phone, gender, password, confirmPassword }) => {
 
-    return client.post(endpoint, data);
+    const data = {
+        name: 'john doe',
+        phone: '+406564069',
+        gender: 'male',
+        password: 'asd@1234',
+        confirmPassword: 'asd@1234'
+    };
+
+    return await postData(data);
 };

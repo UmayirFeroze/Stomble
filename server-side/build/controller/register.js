@@ -11,10 +11,10 @@ const RegisterUser = (req, res, next) => {
         .then(connection => {
         (0, database_1.Query)(connection, query)
             .then(results => { return res.status(200).json({ results }); })
-            .catch(error => { res.status(500).send({ message: error.message, error }); })
+            .catch(error => { return res.status(500).send({ message: error.message, error }); })
             .finally(() => connection.end());
     })
-        .catch(error => { res.status(500).send({ message: error.message, error }); });
+        .catch(error => { return res.status(500).send({ message: error.message, error }); });
 };
 function Validate(user) {
     const phoneRegex = /^(\+61)[0-9]{9}$/;

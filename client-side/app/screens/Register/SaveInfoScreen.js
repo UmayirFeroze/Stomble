@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import AppButton from '../../components/AppButton';
 import Screen from '../../components/Screen';
 import colors from '../../config/colors';
 
+import { useRoute } from '@react-navigation/native';
+import { registerUser } from '../../routes/register';
+
 function SaveInfoScreen (props) {
+
+    const { name, phone, gender, dob, password, confirmPassword, otp, accountType } = useRoute().params;
+
+    const handleSubmit = async () => {
+        const user = { name, phone, gender, password, confirmPassword };
+        try {
+            const result = await registerUser(user);
+            if (!result.ok) {
+                console.log(result);
+                return alert('Could not register!');
+            }
+            alert('success!');
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     return (
         <Screen>
             <View style={styles.container}>
@@ -13,7 +33,7 @@ function SaveInfoScreen (props) {
             </View>
 
             <View style={styles.buttonContainer}>
-                <AppButton title='Save' onPress={() => console.log('Continue pressed!')} />
+                <AppButton title='Save' onPress={handleSubmit} />
                 <AppButton title='Not now' color='transparent' onPress={() => console.log('Continue pressed!')} />
             </View>
         </Screen>
