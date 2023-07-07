@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/joi": "^17.2.3",
     "typescript": "^5.1.6"
   },
   "dependencies": {
@@ -20,7 +21,7 @@
     "@types/mysql": "^2.15.21",
     "@types/node": "^20.3.3",
     "express": "^4.18.2",
-    "joi": "^17.9.2",
+    "joi": "^13.1.0",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1"
